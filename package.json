@@ -1,0 +1,13 @@
+{
+  "name": "workflows",
+  "version": "0.0.1",
+  "description": "eine Beispiel Projekt Anwendung",
+  
+  
+  "repository": {
+    "type": "git",
+    "url": "?.git"
+  },
+  "author": "Lydia Schimpf",
+  
+}
