@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
     gutil = require('gulp-util'),
     coffee = require('gulp-coffee'),
-    concat = require ('gulp-concat');
+    concat = require ('gulp-concat'),
+    broserify = require('gulp-browserify');
     
    
 
@@ -12,7 +13,7 @@ var jsSources = [
     'components/scripts/tagline.js',
     'components/scripts/template.js',
 ];
-
+ 
 
 gulp.task('coffee', function(){
   gulp.src(coffeeScripts)
@@ -24,5 +25,6 @@ gulp.task('coffee', function(){
 gulp.task('js', function(){
     gulp.src(jsSources)
     .pipe(concat('script.js'))
+    .pipe(broserify())
     .pipe(gulp.dest('builds/development/js'))    
-});
+}); 
