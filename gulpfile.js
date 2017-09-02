@@ -3,9 +3,9 @@ var gulp = require('gulp'),
     coffee = require('gulp-coffee'),
     concat = require ('gulp-concat'), 
     compass = require ('gulp-compass'),
-    path = require ('path'),
+    path = require ('path'),   
     broserify = require('gulp-browserify');
-    
+   
    
 
 var coffeeScripts = ['components/coffee/tagline.coffee'];
@@ -26,7 +26,7 @@ gulp.task('coffee', function(){
 	.pipe(gulp.dest('components/scripts'))
 	});
 
-gulp.task('js',['coffee'], function(){
+gulp.task('js', function(){
     gulp.src(jsSources)
     .pipe(concat('script.js'))
     .pipe(broserify())
@@ -44,4 +44,23 @@ gulp.task('compass', function() {
     .pipe(gulp.dest('builds/development/css'))
     
 });
-gulp.task('default',['coffee','js','compass']);
+
+
+gulp.task('watch', function(){
+    gulp.watch('components/coffee/tagline.coffee', ['coffee']);
+    gulp.watch('components/scripts/*.js', ['js']);
+    gulp.watch('components/sass/*.scss', ['compass']);
+});
+
+gulp.task('default',['coffee','js','compass','watch']);
+
+
+
+
+
+
+
+
+
+
+
