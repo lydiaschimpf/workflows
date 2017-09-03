@@ -7,4 +7,4 @@ $(function() {
     $('#speakers').html(html);    
   }); //getJSON
   
-}); //function
+}); //function 
